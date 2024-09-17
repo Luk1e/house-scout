@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  * {
+    @apply text-[16px];
+  }
+
+  @font-face {
+    font-family: "FiraGo";
+    src: url("./assets/fonts/fira-go/firago-latin-500-normal.ttf")
+      format("truetype");
+    font-weight: 500;
+    font-style: normal;
+  }
+}

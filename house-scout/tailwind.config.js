@@ -2,7 +2,11 @@
 export default {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        firaGo: ["firaGo", "sans-serif"],
+      },
+    },
   },
   plugins: [],
 };

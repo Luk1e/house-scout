@@ -1,4 +1,5 @@
 import { lazyLayouts } from "../layouts";
+import { lazyPages } from "../pages";
 
 export default function PublicRoutes() {
   const { PublicLayout } = lazyLayouts;
@@ -7,6 +8,10 @@ export default function PublicRoutes() {
     path: "/",
     element: <PublicLayout />,
     children: [
+      {
+        path: "/",
+        element: <lazyPages.HomePage />,
+      },
       {
         path: "*",
         element: <div>error</div>,
