@@ -4,7 +4,14 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        firaGo: ["firaGo", "sans-serif"],
+        firaGo: ["FiraGo", "sans-serif"],
+      },
+      fontWeight: {
+        firaGo400: 400,
+        firaGo500: 500,
+      },
+      boxShadow: {
+        modalShadow: "5px 5px 4px 0px rgba(0, 0, 0, 0.08)",
       },
     },
   },

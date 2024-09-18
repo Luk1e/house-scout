@@ -6,11 +6,12 @@ import { EstateType, EstatesStateProps } from "../types";
 // Interface for request data
 type ValuesProps = void;
 
-// Interface for Rejected State (optional, for more granular error handling)
+// Interface for Rejected State
 interface RejectWithValueProps {
   message: string;
 }
 
+// Interface for returned data
 type ActionProps = EstateType[];
 
 export const getEstates = createAsyncThunk<

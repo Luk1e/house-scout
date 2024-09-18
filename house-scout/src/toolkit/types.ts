@@ -10,6 +10,14 @@ export interface RegionType {
   name: string;
 }
 
+export interface AgentType {
+  id: number;
+  name: string;
+  email: string;
+  phone: string;
+  avatar: string;
+}
+
 export interface EstateType {
   id: number;
   address: string;
@@ -37,6 +45,12 @@ export interface RegionStateProps {
 
 export interface EstatesStateProps {
   estates: EstateType[] | null;
+  isLoading: boolean;
+  error: any;
+}
+
+export interface CreateAgentStateProps {
+  agent: AgentType | null;
   isLoading: boolean;
   error: any;
 }

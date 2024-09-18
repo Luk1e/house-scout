@@ -30,7 +30,7 @@ function HomePage() {
 
   console.log(estatesSlice.estates);
   return (
-    <main className="px-10 py-5 md:px-15 md:py-10 lg:px-28 lg:py-15 2xl:px-[162px] 2xl:py-[38px] font-firaGo">
+    <main className="px-10 py-5 md:px-15 md:py-10 lg:px-28 lg:py-15 2xl:px-[162px] 2xl:py-[38px] font-firaGo500">
       <FilterPanel />
     </main>
   );

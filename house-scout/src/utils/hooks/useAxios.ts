@@ -17,3 +17,11 @@ export const useAuthAxios = axios.create({
     Authorization: `Bearer ${TOKEN}`,
   },
 });
+
+export const useAuthFileAxios = axios.create({
+  baseURL: BACKEND_URL,
+  headers: {
+    "Content-Type": "multipart/form-data",
+    Authorization: `Bearer ${TOKEN}`,
+  },
+});

@@ -15,7 +15,7 @@ function Filter() {
   };
 
   return (
-    <div className="flex border-[#DBDBDB] border rounded-[10px] p-[6px] gap-[24px]">
+    <div className="flex border-[#DBDBDB] border rounded-[10px] p-[6px] gap-[24px] flex-col 2xl:flex-row">
       <RegionFilter
         isOpen={openFilter === 0}
         onToggle={() => handleOpenFilter(0)}

@@ -4,7 +4,11 @@
 
 @layer base {
   * {
-    @apply text-[16px];
+    @apply text-[16px] text-[#021526] font-firaGo500 font-firaGo;
+  }
+
+  input {
+    @apply text-[14px] font-firaGo400 border-[#808A93] border-[1px] rounded-[6px] p-[10px];
   }
 
   @font-face {
@@ -12,6 +16,14 @@
     src: url("./assets/fonts/fira-go/firago-latin-500-normal.ttf")
       format("truetype");
     font-weight: 500;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "FiraGo";
+    src: url("./assets/fonts/fira-go/firago-latin-400-normal.ttf")
+      format("truetype");
+    font-weight: 400;
     font-style: normal;
   }
 }
