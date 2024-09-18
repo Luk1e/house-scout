@@ -6,8 +6,8 @@ import { HeaderComponent } from "./components";
 function App() {
   return (
     <>
-      <HeaderComponent />
       <BrowserRouter>
+        <HeaderComponent />
         <Router />
       </BrowserRouter>
     </>
