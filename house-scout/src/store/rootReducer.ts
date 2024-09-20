@@ -3,6 +3,7 @@ import {
   citySlice,
   agentSlice,
   regionSlice,
+  estateSlice,
   estatesSlice,
   createAgentSlice,
   createEstateSlice,
@@ -13,6 +14,7 @@ const rootReducer = combineReducers({
   agent: agentSlice,
   region: regionSlice,
   estates: estatesSlice,
+  estate: estateSlice,
   createAgent: createAgentSlice,
   createEstate: createEstateSlice,
 });

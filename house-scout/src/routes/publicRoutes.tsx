@@ -17,6 +17,10 @@ export default function PublicRoutes() {
         element: <lazyPages.AddListingPage />,
       },
       {
+        path: "/listing/:id",
+        element: <lazyPages.ListingPage />,
+      },
+      {
         path: "*",
         element: <div>error</div>,
       },

@@ -30,7 +30,23 @@ export interface EstateType {
   image: string;
   city_id: number;
   city: CityType;
-  region_id: number;
+}
+
+export interface GetEstateType {
+  id: number;
+  address: string;
+  zip_code: number;
+  price: number;
+  area: number;
+  bedrooms: number;
+  is_rental: number;
+  city_id: number;
+  description: string;
+  created_at: string;
+  city: CityType;
+  agent_id: number;
+  agent: AgentType;
+  image: string;
 }
 
 export interface CityStateProps {
@@ -53,6 +69,12 @@ export interface AgentStateProps {
 
 export interface EstatesStateProps {
   estates: EstateType[] | null;
+  isLoading: boolean;
+  error: any;
+}
+
+export interface EstateStateProps {
+  estate: EstateType | null;
   isLoading: boolean;
   error: any;
 }
