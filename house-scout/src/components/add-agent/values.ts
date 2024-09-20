@@ -17,27 +17,18 @@ export const validationSchema = z.object({
 
   surname: z.string().min(2),
 
-  email: z.string().refine((val) => val.endsWith("@redberry.ge"), {
-    message: "უნდა მთავრდებოდეს @redberry.ge-თ",
-  }),
+  email: z.string().refine((val) => val.endsWith("@redberry.ge")),
 
   phone: z
     .string()
-    .regex(/^\d+$/, "ნუმერული სიმბოლოები")
-    .regex(/^5\d{8}$/, "უნდა იყოს ფორმატის 5XXXXXXXX"),
+    .regex(/^\d+$/)
+    .regex(/^5\d{8}$/),
 
   avatar: z
-    .instanceof(File, { message: "სავალდებულო" })
-    .refine(
-      (file) => file.size <= MAX_UPLOAD_SIZE,
-      "არ უნდა აღებმატებოდეს 1mb-ის ზომაში"
-    )
-    .refine(
-      (file) =>
-        ["image/jpeg", "image/png", "image/gif", "image/webp"].includes(
-          file.type
-        ),
-      "სურათის ტიპი"
+    .instanceof(File)
+    .refine((file) => file.size <= MAX_UPLOAD_SIZE)
+    .refine((file) =>
+      ["image/jpeg", "image/png", "image/gif", "image/webp"].includes(file.type)
     ),
 });
 

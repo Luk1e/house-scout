@@ -4,7 +4,7 @@ import { FormValues } from "../values";
 import { SuccessIcon } from "../../../assets/icons";
 
 const NameSurnameFields: React.FC = () => {
-  const { errors, touched } = useFormikContext<FormValues>();
+  const { errors, touched, values } = useFormikContext<FormValues>();
 
   return (
     <div className="flex flex-col justify-between md:flex-row gap-[25px] [&_*]:text-[14px]">
@@ -21,7 +21,7 @@ const NameSurnameFields: React.FC = () => {
         <div
           className={
             "flex items-center font-firaGo400 gap-[7px] " +
-            (touched.name
+            (touched.name || values.name
               ? errors.name
                 ? "text-[#F93B1D]"
                 : "text-[#45A849]"
@@ -45,7 +45,7 @@ const NameSurnameFields: React.FC = () => {
         <div
           className={
             "flex items-center font-firaGo400 gap-[7px] " +
-            (touched.surname
+            (touched.surname || values.surname
               ? errors.surname
                 ? "text-[#F93B1D]"
                 : "text-[#45A849]"

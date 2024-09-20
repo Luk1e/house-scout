@@ -3,12 +3,9 @@ import { useFormikContext } from "formik";
 import { FormValues } from "../values";
 import { UploadIcon, RemoveIcon, SuccessIcon } from "../../../assets/icons";
 
-interface ImageFieldProps {
-  setFieldValue: (field: string, value: any, shouldValidate?: boolean) => void;
-}
-
-const ImageField: React.FC<ImageFieldProps> = ({ setFieldValue }) => {
-  const { errors, touched, setFieldTouched } = useFormikContext<FormValues>();
+const ImageField: React.FC = () => {
+  const { errors, touched, setFieldTouched, setFieldValue } =
+    useFormikContext<FormValues>();
   const [previewUrl, setPreviewUrl] = useState<string | null>(null);
 
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -55,6 +52,7 @@ const ImageField: React.FC<ImageFieldProps> = ({ setFieldValue }) => {
             type="file"
             accept="image/*"
             onChange={handleFileChange}
+            onBlur={() => setFieldTouched("avatar", true)}
             className="sr-only"
           />
           <label
@@ -97,7 +95,7 @@ const ImageField: React.FC<ImageFieldProps> = ({ setFieldValue }) => {
             : "")
         }
       >
-        <SuccessIcon /> სავალდებულო
+        <SuccessIcon /> არ უნდა აღემატებოდეს 1mb-ის
       </div>
     </div>
   );

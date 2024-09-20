@@ -5,6 +5,7 @@ export default {
     extend: {
       fontFamily: {
         firaGo: ["FiraGo", "sans-serif"],
+        helveticaNeue: ["HelveticaNeue", "sans-serif"],
       },
       fontWeight: {
         firaGo400: 400,

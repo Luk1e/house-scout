@@ -37,7 +37,6 @@ export const createAgent = createAsyncThunk<
     }
 
     const { data } = await useAuthFileAxios.post(`/agents`, formData);
-    console.log(data);
     return data;
   } catch (err: any) {
     return rejectWithValue(err.response.data);

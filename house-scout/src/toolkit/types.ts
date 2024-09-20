@@ -15,6 +15,7 @@ export interface AgentType {
   name: string;
   email: string;
   phone: string;
+  surname: string;
   avatar: string;
 }
 
@@ -29,6 +30,7 @@ export interface EstateType {
   image: string;
   city_id: number;
   city: CityType;
+  region_id: number;
 }
 
 export interface CityStateProps {
@@ -43,6 +45,12 @@ export interface RegionStateProps {
   error: any;
 }
 
+export interface AgentStateProps {
+  agents: AgentType[] | null;
+  isLoading: boolean;
+  error: any;
+}
+
 export interface EstatesStateProps {
   estates: EstateType[] | null;
   isLoading: boolean;
@@ -51,6 +59,12 @@ export interface EstatesStateProps {
 
 export interface CreateAgentStateProps {
   agent: AgentType | null;
+  isLoading: boolean;
+  error: any;
+}
+
+export interface CreateEstateStateProps {
+  estate: EstateType | null;
   isLoading: boolean;
   error: any;
 }

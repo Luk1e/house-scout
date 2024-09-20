@@ -49,24 +49,22 @@ const AddAgentComponent: React.FC<ModalProps> = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="absolute top-0 left-0 h-fit min-h-full w-full  bg-black bg-opacity-50 flex items-center justify-center p-4 overflow-y-scroll">
+    <div className="fixed inset-0   bg-black bg-opacity-50 flex items-center justify-center p-4">
       <div
         ref={modalRef}
-        className="bg-[#FFFFFF]  rounded-[10px] py-10 px-6 md:p-[60px] w-full max-w-[1010px]  2xl:h-[784px] shadow-modalShadow flex flex-col justify-center items-center"
+        className="bg-[#FFFFFF] rounded-[10px] py-10 px-6 md:p-[60px] w-full max-w-[1010px] max-h-[90vh] 2xl:h-[784px] shadow-modalShadow overflow-y-scroll"
       >
-        <h2 className="text-2xl 2xl:text-[32px] mb-10 text-center">
-          აგენტის დამატება
-        </h2>
+        <h2 className="!text-[32px] mb-10 text-center">აგენტის დამატება</h2>
         <Formik
           initialValues={initialValues}
           validationSchema={toFormikValidationSchema(validationSchema)}
           onSubmit={(values) => onSubmit({ dispatch, values })}
         >
-          {({ setFieldValue }) => (
+          {() => (
             <Form className="flex gap-[28px] flex-col 2xl:w-[800px] text-[14px] input w-full">
               <NameSurnameFields />
               <PhoneEmailFields />
-              <ImageField setFieldValue={setFieldValue} />
+              <ImageField />
 
               <Buttons onClose={() => onClose()} isLoading={isLoading} />
             </Form>

@@ -11,6 +11,16 @@
     @apply text-[14px] font-firaGo400 border-[#808A93] border-[1px] rounded-[6px] p-[10px];
   }
 
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+
   @font-face {
     font-family: "FiraGo";
     src: url("./assets/fonts/fira-go/firago-latin-500-normal.ttf")
@@ -24,6 +34,14 @@
     src: url("./assets/fonts/fira-go/firago-latin-400-normal.ttf")
       format("truetype");
     font-weight: 400;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "HelveticaNeue";
+    src: url("./assets/fonts/helvetica-neue/HelveticaNeueMedium.otf")
+      format("opentype");
+    font-weight: 500;
     font-style: normal;
   }
 }

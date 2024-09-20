@@ -13,6 +13,10 @@ export default function PublicRoutes() {
         element: <lazyPages.HomePage />,
       },
       {
+        path: "/add-listing",
+        element: <lazyPages.AddListingPage />,
+      },
+      {
         path: "*",
         element: <div>error</div>,
       },

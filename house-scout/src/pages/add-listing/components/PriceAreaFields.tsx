@@ -3,50 +3,52 @@ import { Field, useFormikContext } from "formik";
 import { FormValues } from "../values";
 import { SuccessIcon } from "../../../assets/icons";
 
-const PhoneEmailFields: React.FC = () => {
+const PriceAreaFields: React.FC = () => {
   const { errors, touched, values } = useFormikContext<FormValues>();
 
   return (
     <div className="flex flex-col justify-between md:flex-row gap-[25px] [&_*]:text-[14px]">
-      {/* email field */}
+      {/* price field */}
       <div className="flex-1 gap-[5px] lg:w-[384px] ">
-        <label htmlFor="email" className="block">
-          ელ-ფოსტა *
+        <label htmlFor="price" className="block">
+          ფასი *
         </label>
         <Field
-          name="email"
+          name="price"
+          type="number"
           className="w-full justify-between my-1"
-          placeholder="ელ-ფოსტა"
+          placeholder="ფასი"
         />
         <div
           className={
             "flex items-center font-firaGo400 gap-[7px] " +
-            (touched.email || values.email
-              ? errors.email
+            (touched.price || values.price
+              ? errors.price
                 ? "text-[#F93B1D]"
                 : "text-[#45A849]"
               : "")
           }
         >
-          <SuccessIcon /> გამოიყენეთ @redberry.ge ფოსტა
+          <SuccessIcon /> მხოლოდ რიცხვები
         </div>
       </div>
 
-      {/* phone field */}
-      <div className="flex-1 gap-[5px] lg:w-[384px]">
-        <label htmlFor="phone" className="block">
-          ტელეფონის ნომერი *
+      {/* area field */}
+      <div className="flex-1 gap-[5px] lg:w-[384px] ">
+        <label htmlFor="area" className="block">
+          ფართობი *
         </label>
         <Field
-          name="phone"
+          name="area"
+          type="number"
           className="w-full justify-between my-1"
-          placeholder="ტელეფონის ნომერი"
+          placeholder="ფართობი"
         />
         <div
           className={
             "flex items-center font-firaGo400 gap-[7px] " +
-            (touched.phone || values.phone
-              ? errors.phone
+            (touched.area || values.area
+              ? errors.area
                 ? "text-[#F93B1D]"
                 : "text-[#45A849]"
               : "")
@@ -59,4 +61,4 @@ const PhoneEmailFields: React.FC = () => {
   );
 };
 
-export default PhoneEmailFields;
+export default PriceAreaFields;
