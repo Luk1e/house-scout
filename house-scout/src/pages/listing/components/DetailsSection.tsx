@@ -7,7 +7,7 @@ import EstateDetails from "./EstateDetails";
 
 function DetailsSection({ estate }: EstateProps) {
   return (
-    <section className="flex flex-col relative  sm:gap-[68px] 1700px:w-[1591px] 1700px:flex-row">
+    <section className="flex flex-col relative  sm:gap-[68px] 1700px:w-[1620px] 2xl:flex-row">
       {/* left side */}
       <LeftSide estate={estate} />
 
