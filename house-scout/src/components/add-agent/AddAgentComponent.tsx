@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import { useRef, useEffect } from "react";
 import { Formik, Form } from "formik";
 import { toFormikValidationSchema } from "zod-formik-adapter";
 import { validationSchema, initialValues, onSubmit } from "./values";
@@ -13,7 +13,7 @@ interface ModalProps {
   onClose: () => void;
 }
 
-const AddAgentComponent: React.FC<ModalProps> = ({ isOpen, onClose }) => {
+const AddAgentComponent = ({ isOpen, onClose }: ModalProps) => {
   const modalRef = useRef<HTMLDivElement>(null);
   const dispatch: DispatchType = useDispatch();
   const { agent, isLoading } = useSelector(
@@ -49,7 +49,7 @@ const AddAgentComponent: React.FC<ModalProps> = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0   bg-black bg-opacity-50 flex items-center justify-center p-4">
+    <div className="fixed inset-0  bg-black bg-opacity-50 flex items-center justify-center p-4 z-20">
       <div
         ref={modalRef}
         className="bg-[#FFFFFF] rounded-[10px] py-10 px-6 md:p-[60px] w-full max-w-[1010px] max-h-[90vh] 2xl:h-[784px] shadow-modalShadow overflow-y-scroll"

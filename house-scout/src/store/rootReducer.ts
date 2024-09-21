@@ -7,6 +7,7 @@ import {
   estatesSlice,
   createAgentSlice,
   createEstateSlice,
+  deleteEstateSlice,
 } from "../toolkit";
 
 const rootReducer = combineReducers({
@@ -17,6 +18,7 @@ const rootReducer = combineReducers({
   estate: estateSlice,
   createAgent: createAgentSlice,
   createEstate: createEstateSlice,
+  deleteEstate: deleteEstateSlice,
 });
 
 export default rootReducer;

@@ -9,7 +9,7 @@ export const lazyLoadComponent = (importFunc: ImportComponentFunction) => {
   const LazyComponent = lazy(importFunc);
 
   return (props: any) => (
-    <Suspense fallback={<LoaderComponent color="darkmagenta" />}>
+    <Suspense fallback={<LoaderComponent />}>
       <LazyComponent {...props} />
     </Suspense>
   );

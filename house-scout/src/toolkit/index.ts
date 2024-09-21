@@ -5,6 +5,7 @@ import estateSlice from "./real-estates/estateSlice";
 import estatesSlice from "./real-estates/estatesSlice";
 import createAgentSlice from "./agent/createAgentSlice";
 import createEstateSlice from "./real-estates/createEstateSlice";
+import deleteEstateSlice from "./real-estates/deleteEstateSlice";
 
 export {
   citySlice,
@@ -14,4 +15,5 @@ export {
   estatesSlice,
   createAgentSlice,
   createEstateSlice,
+  deleteEstateSlice,
 };

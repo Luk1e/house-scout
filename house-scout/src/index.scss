@@ -21,6 +21,10 @@
     -moz-appearance: textfield;
   }
 
+  input[type="radio"] {
+    accent-color: #021526;
+  }
+
   @font-face {
     font-family: "FiraGo";
     src: url("./assets/fonts/fira-go/firago-latin-500-normal.ttf")
@@ -34,6 +38,14 @@
     src: url("./assets/fonts/fira-go/firago-latin-400-normal.ttf")
       format("truetype");
     font-weight: 400;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "FiraGo";
+    src: url("./assets/fonts/fira-go/firago-latin-700-normal.ttf")
+      format("truetype");
+    font-weight: 700;
     font-style: normal;
   }
 

@@ -74,7 +74,7 @@ export interface EstatesStateProps {
 }
 
 export interface EstateStateProps {
-  estate: EstateType | null;
+  estate: GetEstateType | null;
   isLoading: boolean;
   error: any;
 }
@@ -87,6 +87,12 @@ export interface CreateAgentStateProps {
 
 export interface CreateEstateStateProps {
   estate: EstateType | null;
+  isLoading: boolean;
+  error: any;
+}
+
+export interface DeleteEstateStateProps {
+  success: { message: string } | null;
   isLoading: boolean;
   error: any;
 }
