@@ -24,7 +24,7 @@ function Buttons({ isLoading }: ButtonProps) {
         disabled={isLoading}
         className="flex h-full items-center justify-center bg-[#F93B1D] rounded-[10px] px-[16px] py-[10px] text-[#FFFFFF] gap-[2px] hover:bg-[#DF3014] transition-all duration-300 ml-5 disabled:cursor-not-allowed"
       >
-        დამატება აგენტი
+        დაამატე ლისტინგი
       </button>
     </div>
   );
