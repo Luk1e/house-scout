@@ -39,8 +39,8 @@ To start the frontend, ensure you have Node and npm installed. Then, follow thes
 
 ## Project Overview
 
-**Project Name:** House Scout
-**GitHub Repository:** [https://github.com/Luk1e/house-scout](https://github.com/Luk1e/house-scout)
+**Project Name:** House Scout <br>
+**GitHub Repository:** [https://github.com/Luk1e/house-scout](https://github.com/Luk1e/house-scout) <br>
 **Hosted Version:** [https://house-scout.onrender.com/](https://house-scout.onrender.com/)
 
 House Scout is a web application for real estate listings and management. It provides features for browsing, filtering, and adding property listings.
