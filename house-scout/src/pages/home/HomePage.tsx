@@ -29,7 +29,7 @@ function HomePage() {
     };
   }, []);
 
-  const filteredEstates = estates ? [...estates] : []; // Using spread operator
+  const filteredEstates = estates ? [...estates] : [];
   filteredEstates.reverse();
 
   console.log(regionSlice.regions);
