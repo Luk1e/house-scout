@@ -103,27 +103,29 @@ function HomePage() {
   }, [estates, searchParams]);
 
   return (
-    <main className="px-10 py-5 md:px-15 md:py-10 lg:px-28 lg:py-15 2xl:px-[150px] 2xl:py-[38px] font-firaGo500">
-      <FilterPanel />
-      <FilterParams />
-      {isLoading ? (
-        <LoaderComponent />
-      ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-[repeat(auto-fit,minmax(384px,1fr))] gap-4 gap-y-16 sm:gap-y-10 mb-10 2xl:mb-40 mt-5">
-          {filteredEstates.length > 0 ? (
-            filteredEstates.map((estate) => (
-              <div
-                key={estate.id}
-                className="max-w-fit [&>*]:!p-0 [&>*]:!m-0 [&>div>div]:shadow-cardShadow"
-              >
-                <EstateCardComponent estate={estate} />
-              </div>
-            ))
-          ) : (
-            <p>ლისტინგი ვერ მოიძებნა</p>
-          )}
-        </div>
-      )}
+    <main className="px-10 py-5 md:px-15 md:py-10 lg:px-28 xl:py-15 2xl:px-[150px] 2xl:py-[64px] font-firaGo500 flex items-center justify-center">
+      <div className="1700px:w-[1600px] 1600px:w-[1500]">
+        <FilterPanel />
+        <FilterParams />
+        {isLoading ? (
+          <LoaderComponent />
+        ) : (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-4 gap-y-16 sm:gap-y-10  mt-5">
+            {filteredEstates.length > 0 ? (
+              filteredEstates.map((estate) => (
+                <div
+                  key={estate.id}
+                  className="max-w-fit sm:max-w-[384px] [&>*]:!p-0 [&>*]:!m-0 [&>div>div]:shadow-cardShadow"
+                >
+                  <EstateCardComponent estate={estate} />
+                </div>
+              ))
+            ) : (
+              <p>ლისტინგი ვერ მოიძებნა</p>
+            )}
+          </div>
+        )}
+      </div>
     </main>
   );
 }

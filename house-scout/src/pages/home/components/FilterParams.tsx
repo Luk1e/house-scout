@@ -32,7 +32,7 @@ function FilterParams() {
   };
 
   return (
-    <div className="flex gap-[16px] flex-wrap my-5">
+    <div className="flex gap-[16px] my-5 w-full flex-wrap">
       {/* Display Space Range */}
       {searchParams.get("minSpace") && searchParams.get("maxSpace") && (
         <div className="border rounded-[43px] border-[#DBDBDB] px-[10px] py-[6px] flex items-center gap-[4px] text-[14px] font-firaGo400 text-[#021526cc]">

@@ -10,6 +10,8 @@ export default {
 
       screens: {
         "1700px": "1700px",
+        "1600px": "1600px",
+        "2xl": "1560px",
       },
 
       fontWeight: {
