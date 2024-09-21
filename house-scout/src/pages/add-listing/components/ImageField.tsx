@@ -44,9 +44,6 @@ const ImageField: React.FC = () => {
         setPreviewUrl(values.image.dataUrl);
       }
     }
-    return () => {
-      localStorage.removeItem("image_field");
-    };
   }, [setFieldValue, setFieldTouched]);
 
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {

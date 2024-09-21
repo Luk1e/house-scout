@@ -81,7 +81,7 @@ function AddListingPage() {
       >
         {() => (
           <Form className="flex gap-[80px] flex-col lg:w-[790px] text-[14px] input w-full">
-            {<FormikPersist name="FormName" />}
+            {<FormikPersist />}
             <div className="flex flex-col gap-[10px] w-[266px]">
               <h3 className="font-helveticaNeue">გარიგების ტიპი</h3>
               <RentTypeFields />

@@ -49,6 +49,8 @@ export const createEstate = createAsyncThunk<
     }
 
     const { data } = await useAuthFileAxios.post(`/real-estates`, formData);
+    localStorage.removeItem("image_field");
+    localStorage.removeItem(`formik.form.FormName`);
     return data;
   } catch (err: any) {
     return rejectWithValue(err.response.data);

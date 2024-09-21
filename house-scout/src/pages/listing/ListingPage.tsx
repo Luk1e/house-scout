@@ -21,7 +21,6 @@ function ListingPage() {
     };
   }, [id, dispatch]);
 
-  console.log(estate);
   return (
     <main className="flex flex-col p-5 sm:p-20 items-center gap-[32px]">
       <HeaderSection />

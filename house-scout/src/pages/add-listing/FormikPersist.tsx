@@ -1,14 +1,10 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useFormikContext, FormikValues } from "formik";
 
-type FormikPersistProps = {
-  name: string;
-};
-
-const FormikPersist: React.FC<FormikPersistProps> = ({ name }) => {
+const FormikPersist = () => {
   const { values, errors, setValues, setErrors } =
     useFormikContext<FormikValues>();
-  const storageKey = `formik.form.${name}`;
+  const storageKey = `formik.form.FormName`;
 
   useEffect(() => {
     const data = localStorage.getItem(storageKey);
@@ -17,10 +13,6 @@ const FormikPersist: React.FC<FormikPersistProps> = ({ name }) => {
       setValues(storedValues);
       setErrors(storedErrors);
     }
-
-    return () => {
-      localStorage.removeItem(storageKey);
-    };
   }, []);
 
   useEffect(() => {

@@ -10,7 +10,11 @@ function Buttons({ isLoading }: ButtonProps) {
     <div className="flex">
       <button
         type="button"
-        onClick={() => navigate("/")}
+        onClick={() => {
+          localStorage.removeItem("image_field");
+          localStorage.removeItem(`formik.form.FormName`);
+          navigate("/");
+        }}
         className="flex h-full items-center justify-center bg-[#FFFFFF] rounded-[10px] px-[16px] py-[10px] text-[#F93B1D] border-[#F93B1D] border gap-[2px] hover:bg-[#F93B1D] hover:text-[#FFFFFF] transition-all duration-300 ml-auto"
       >
         გაუქმება
