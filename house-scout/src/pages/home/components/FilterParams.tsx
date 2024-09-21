@@ -9,10 +9,10 @@ function FilterParams() {
 
   // Retrieve region IDs and map them to region names
   const regionIds = searchParams.get("regions")?.split(",").map(Number) || [];
-  const regionNames = regions
+  const regionOptions = regions
     ? regions
         .filter((region) => regionIds.includes(region.id))
-        .map((region) => region.name)
+        .map((region) => region)
     : [];
 
   // Function to remove query parameters
@@ -99,19 +99,19 @@ function FilterParams() {
       )}
 
       {/* Display Regions */}
-      {regionNames.length > 0 &&
-        regionNames.map((regionName, index) => (
+      {regionOptions.length > 0 &&
+        regionOptions.map((region) => (
           <div
-            key={regionIds[index]}
+            key={region.id}
             className="border rounded-[43px] border-[#DBDBDB] px-[10px] py-[6px] flex items-center justify-center gap-[4px] text-[14px] font-firaGo400 text-[#021526cc]"
           >
             <span className="text-[14px] font-firaGo400 text-[#021526cc]">
-              {regionName}
+              {region.name}
             </span>
             <div className="flex items-center justify-center w-[14px] h-[14px]">
               <button
                 className="[&>*]:h-[7px] [&>*]:w-[7px] text-[#354451] hover:text-[#021526]"
-                onClick={() => handleRemoveRegion(regionIds[index])}
+                onClick={() => handleRemoveRegion(region.id)}
               >
                 <CloseIcon />
               </button>
