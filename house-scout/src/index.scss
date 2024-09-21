@@ -25,6 +25,15 @@
     accent-color: #021526;
   }
 
+  input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    accent-color: green;
+
+    border: 1px solid #dbdbdb;
+    border-radius: 2px;
+  }
+
   @font-face {
     font-family: "FiraGo";
     src: url("./assets/fonts/fira-go/firago-latin-500-normal.ttf")

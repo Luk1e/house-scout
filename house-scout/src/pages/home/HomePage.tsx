@@ -14,7 +14,7 @@ import { EstateCardComponent, LoaderComponent } from "../../components";
 
 function HomePage() {
   const dispatch: DispatchType = useDispatch();
-  const regionSlice = useSelector((state: StateType) => state.region);
+
   const { estates, isLoading } = useSelector(
     (state: StateType) => state.estates
   );
@@ -30,9 +30,6 @@ function HomePage() {
   }, []);
 
   const filteredEstates = estates ? [...estates] : [];
-  filteredEstates.reverse();
-
-  console.log(regionSlice.regions);
 
   console.log(estates);
   return (

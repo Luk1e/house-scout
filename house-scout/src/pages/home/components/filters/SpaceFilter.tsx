@@ -62,7 +62,7 @@ function SpaceFilter({ isOpen, onToggle }: FilterProps) {
   }, [isOpen, searchParams, onToggle]);
 
   return (
-    <div className="relative flex">
+    <div className="relative flex" ref={dropdownRef}>
       <button
         onClick={() => onToggle()}
         className={`flex items-center rounded-[6px] px-[14px] py-[8px] gap-[4px] ${
@@ -74,10 +74,7 @@ function SpaceFilter({ isOpen, onToggle }: FilterProps) {
       </button>
 
       {isOpen && (
-        <div
-          ref={dropdownRef}
-          className="absolute flex flex-col top-full mt-[20px] bg-white border border-[#DBDBDB] shadow-cardShadow rounded-[10px] p-[24px] z-10 w-[382px] gap-[24px]"
-        >
+        <div className="absolute flex flex-col top-full mt-[20px] bg-white border border-[#DBDBDB] shadow-cardShadow rounded-[10px] p-[24px] z-10 w-[382px] gap-[24px]">
           <div className="flex flex-col gap-[24px]">
             <h4 className="text-[16px]">ფართობის მიხედვით</h4>
             {/* inputs */}
