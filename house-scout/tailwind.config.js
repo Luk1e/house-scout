@@ -19,6 +19,7 @@ export default {
       },
       boxShadow: {
         modalShadow: "5px 5px 4px 0px rgba(0, 0, 0, 0.08)",
+        cardShadow: "5px 5px 12px 0px rgba(2, 21, 38, 0.08)",
       },
     },
   },

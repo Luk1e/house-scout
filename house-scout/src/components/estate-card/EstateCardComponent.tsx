@@ -24,7 +24,7 @@ function EstateCardComponent({ estate }: EstateCardComponents) {
           src={estate.image}
           className="w-full 1700:w-[384px] h-[307px] rounded-t-[14px]"
         />
-        <p className="absolute top-0 translate-y-full translate-x-1/4 left-0  text-[#FFFFFF] text-[12px] font-firaGo500 bg-[#02152680] w-fit py-[6px] px-[16px] rounded-[15px]">
+        <p className="absolute top-0 translate-y-1/2 translate-x-1/4 left-0  text-[#FFFFFF] text-[12px] font-firaGo500 bg-[#02152680] w-fit py-[6px] px-[16px] rounded-[15px]">
           {estate?.is_rental == 0 ? "ქირავდება" : "იყიდება"}
         </p>
       </div>

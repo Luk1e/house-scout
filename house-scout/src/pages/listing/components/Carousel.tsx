@@ -28,7 +28,7 @@ function Carousel({ region_id }: CarouselProps) {
   if (isLoading) return <LoaderComponent />;
 
   return (
-    <div className="relative w-full flex justify-center mb-32">
+    <div className="relative w-full flex justify-center mb-10 sm:mb-32">
       <div className="w-full overflow-hidden 1700px:w-[1600px] h-[510px]">
         <ReactCarousel
           renderButtonGroupOutside={true}
