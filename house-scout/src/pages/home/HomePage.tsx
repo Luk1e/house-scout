@@ -102,20 +102,19 @@ function HomePage() {
     }
   }, [estates, searchParams]);
 
-  console.log(filteredEstates)
   return (
-    <main className="px-10 py-5 md:px-15 md:py-10 lg:px-28 lg:py-15 2xl:px-[162px] 2xl:py-[38px] font-firaGo500">
+    <main className="px-10 py-5 md:px-15 md:py-10 lg:px-28 lg:py-15 2xl:px-[150px] 2xl:py-[38px] font-firaGo500">
       <FilterPanel />
       <FilterParams />
       {isLoading ? (
         <LoaderComponent />
       ) : (
-        <div className="grid lg:grid-cols-[repeat(auto-fit,384px)] gap-4 gap-y-16 sm:gap-y-10 mb-10 2xl:mb-40 mt-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-[repeat(auto-fit,minmax(384px,1fr))] gap-4 gap-y-16 sm:gap-y-10 mb-10 2xl:mb-40 mt-5">
           {filteredEstates.length > 0 ? (
             filteredEstates.map((estate) => (
               <div
                 key={estate.id}
-                className=" 1700px:w-[384px] max-w-fit [&>*]:!p-0 [&>*]:!m-0 [&>div>div]:shadow-cardShadow"
+                className="max-w-fit [&>*]:!p-0 [&>*]:!m-0 [&>div>div]:shadow-cardShadow"
               >
                 <EstateCardComponent estate={estate} />
               </div>
