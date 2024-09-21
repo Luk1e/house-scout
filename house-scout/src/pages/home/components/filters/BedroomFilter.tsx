@@ -6,6 +6,7 @@ import FilterProps from "../types/FilterProps";
 function BedroomFilter({ isOpen, onToggle }: FilterProps) {
   const [bedroomValue, setBedroomValue] = useState<number | undefined>();
   const [searchParams, setSearchParams] = useSearchParams();
+  const [error, setError] = useState<string>("");
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -16,14 +17,30 @@ function BedroomFilter({ isOpen, onToggle }: FilterProps) {
   }, [searchParams]);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (
+      e.target.value !== undefined &&
+      !isNaN(Number(e.target.value)) &&
+      Number(e.target.value) > 0
+    ) {
+      setError("");
+    } else {
+      setError("ჩაწერეთ ვალიდური მონაცემები");
+    }
     setBedroomValue(Number(e.target.value));
   };
 
   const handleSetBedrooms = () => {
-    if (bedroomValue !== undefined) {
+    if (
+      bedroomValue !== undefined &&
+      !isNaN(bedroomValue) &&
+      bedroomValue > 0
+    ) {
       searchParams.set("bedrooms", bedroomValue.toString());
+      setError("");
       setSearchParams(searchParams);
       onToggle();
+    } else {
+      setError("ჩაწერეთ ვალიდური მონაცემები");
     }
   };
 
@@ -45,8 +62,13 @@ function BedroomFilter({ isOpen, onToggle }: FilterProps) {
 
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
+      setError("");
+      const initialBedroomValue = searchParams.get("bedrooms");
+      if (initialBedroomValue) {
+        setBedroomValue(Number(initialBedroomValue));
+      }
     };
-  }, [isOpen, onToggle]);
+  }, [isOpen, searchParams, onToggle]);
 
   return (
     <div className="relative flex" ref={dropdownRef}>
@@ -69,7 +91,9 @@ function BedroomFilter({ isOpen, onToggle }: FilterProps) {
               value={bedroomValue || ""}
               onChange={handleInputChange}
               placeholder="0"
-              className="border border-[#808A93] rounded-[6px] w-[41px] text-center font-firaGo400 text-[14px] text-[#02152666]"
+              className={`border rounded-[6px] w-[41px] text-center font-firaGo400 text-[14px] placeholder:text-[#02152666] ${
+                error ? "border-[#F93B1D]" : "border-[#808A93]"
+              }`}
             />
           </div>
 
